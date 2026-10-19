@@ -11,7 +11,7 @@ export default fp(async function corsPlugin(fastify) {
       // Support comma-separated origins or specific origin
       const allowedOrigins = [
         env.CORS_ORIGIN,
-        "http://localhost:7777",
+        "https://aquacarez.netlify.app",
         "http://localhost:5173",
       ];
       if (allowedOrigins.includes(origin) || allowedOrigins.includes('*')) {
