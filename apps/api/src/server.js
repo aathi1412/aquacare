@@ -5,6 +5,7 @@ import { connectDB, disconnectDB } from './config/db.js';
 const app = buildApp();
 
 async function start() {
+
   try {
     // Attempt DB connection
     await connectDB(app.log);
