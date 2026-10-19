@@ -6,3 +6,6 @@ build
 *.log
 coverage
 .system_generated
+app-config.json
+catalyst.json
+.catalystrc
