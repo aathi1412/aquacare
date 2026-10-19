@@ -7,8 +7,8 @@ import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
 
 export default function AdminLoginPage() {
-  const [email, setEmail] = useState('admin@aquapure.com');
-  const [password, setPassword] = useState('Admin@123456');
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
   const { login, isLoading, error } = useAuthStore();
   const { addToast } = useToastStore();
   const navigate = useNavigate();
@@ -36,7 +36,7 @@ export default function AdminLoginPage() {
             <Droplets className="w-8 h-8" />
           </div>
           <h1 className="text-2xl font-black text-slate-900 tracking-tight">
-            AquaPure Admin Portal
+            AquaCare Admin Portal
           </h1>
           <p className="text-xs text-slate-500 mt-1.5 font-medium">
             Sign in to manage water purifiers, services, and enquiries
@@ -44,7 +44,7 @@ export default function AdminLoginPage() {
         </div>
 
         {/* Demo Helper Box */}
-        <div className="bg-brand-50/80 border border-brand-200/80 rounded-2xl p-3.5 mb-6 text-xs text-brand-900 flex items-start gap-2.5">
+        {/* <div className="bg-brand-50/80 border border-brand-200/80 rounded-2xl p-3.5 mb-6 text-xs text-brand-900 flex items-start gap-2.5">
           <KeyRound className="w-4 h-4 text-brand-600 shrink-0 mt-0.5" />
           <div>
             <span className="font-bold block">Demo Credentials Pre-filled:</span>
@@ -54,7 +54,7 @@ export default function AdminLoginPage() {
               Password: <code className="font-mono text-brand-700 font-semibold">Admin@123456</code>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {error && (
           <div className="bg-rose-50 border border-rose-200 text-rose-700 p-3 rounded-xl text-xs font-semibold mb-4 text-center">
@@ -74,7 +74,7 @@ export default function AdminLoginPage() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="admin@aquapure.com"
+                placeholder="admin@aquacare.com"
                 className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm"
               />
             </div>
