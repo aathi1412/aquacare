@@ -29,7 +29,7 @@ export function buildApp(opts = {}) {
   });
 
   // Core Plugins
-  app.register(corsPlugin);
+  // app.register(corsPlugin);
   app.register(helmetPlugin);
   app.register(rateLimitPlugin);
   app.register(authPlugin);
