@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import api from '../../services/api.js';
 import { useToastStore } from '../../stores/toastStore.js';
 import LoadingState from '../../components/common/LoadingState.jsx';
 import Modal from '../../components/common/Modal.jsx';
 import FormField from '../../components/common/FormField.jsx';
-import { Plus, Edit, Trash2, Wrench, CheckCircle } from 'lucide-react';
+import { Plus, Edit, Trash2 } from 'lucide-react';
 import Button from '@mui/material/Button';
 
 export default function AdminServicesPage() {
@@ -178,17 +178,16 @@ export default function AdminServicesPage() {
                     {srv.pricingDisplayMode === 'starting_at' && srv.price
                       ? `From $${srv.price}`
                       : srv.pricingDisplayMode === 'fixed' && srv.price
-                      ? `$${srv.price}`
-                      : 'Contact for pricing'}
+                        ? `$${srv.price}`
+                        : 'Contact for pricing'}
                   </td>
                   <td className="py-3.5 px-4 text-xs text-slate-500">
                     {srv.serviceConditions?.length || 0} condition(s)
                   </td>
                   <td className="py-3.5 px-4">
                     <span
-                      className={`px-2.5 py-0.5 rounded-full text-[11px] font-bold ${
-                        srv.isPublished ? 'bg-emerald-50 text-emerald-700' : 'bg-slate-100 text-slate-500'
-                      }`}
+                      className={`px-2.5 py-0.5 rounded-full text-[11px] font-bold ${srv.isPublished ? 'bg-emerald-50 text-emerald-700' : 'bg-slate-100 text-slate-500'
+                        }`}
                     >
                       {srv.isPublished ? 'Published' : 'Hidden'}
                     </span>
@@ -274,12 +273,12 @@ export default function AdminServicesPage() {
               </select>
             </FormField>
 
-            <FormField label="Price ($ USD, Optional)">
+            <FormField label="Price (₹ INR, Optional)">
               <input
                 type="number"
                 value={price}
                 onChange={(e) => setPrice(e.target.value)}
-                placeholder="e.g. 49"
+                placeholder="e.g. 14999"
                 className="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-sm"
               />
             </FormField>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate, useParams, Link } from 'react-router-dom';
 import api from '../../services/api.js';
 import { useToastStore } from '../../stores/toastStore.js';
@@ -9,11 +9,8 @@ import {
   ArrowLeft,
   Plus,
   Trash2,
-  Image as ImageIcon,
   RotateCw,
   Star,
-  UploadCloud,
-  Check,
 } from 'lucide-react';
 import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
@@ -319,7 +316,7 @@ export default function AdminProductFormPage() {
               required
               value={name}
               onChange={(e) => handleNameChange(e.target.value)}
-              placeholder="e.g. AquaPure Grand RO + UV"
+              placeholder="e.g. AquaCare Grand RO + UV"
               className="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-brand-500"
             />
           </FormField>
@@ -330,7 +327,7 @@ export default function AdminProductFormPage() {
               required
               value={slug}
               onChange={(e) => setSlug(e.target.value)}
-              placeholder="e.g. aquapure-grand-ro-uv"
+              placeholder="e.g. aquacare-grand-ro-uv"
               className="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-sm font-mono focus:ring-2 focus:ring-brand-500"
             />
           </FormField>
@@ -363,12 +360,12 @@ export default function AdminProductFormPage() {
             </select>
           </FormField>
 
-          <FormField label="Price ($ USD, Optional)">
+          <FormField label="Price (₹ INR, Optional)">
             <input
               type="number"
               value={price}
               onChange={(e) => setPrice(e.target.value)}
-              placeholder="e.g. 349"
+              placeholder="e.g. 14999"
               className="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-brand-500"
             />
           </FormField>
@@ -594,9 +591,8 @@ export default function AdminProductFormPage() {
             {images.map((img, i) => (
               <div
                 key={i}
-                className={`relative group rounded-2xl border p-2 flex flex-col items-center bg-slate-50 transition ${
-                  img.isPrimary ? 'border-brand-500 ring-2 ring-brand-300' : 'border-slate-200'
-                }`}
+                className={`relative group rounded-2xl border p-2 flex flex-col items-center bg-slate-50 transition ${img.isPrimary ? 'border-brand-500 ring-2 ring-brand-300' : 'border-slate-200'
+                  }`}
               >
                 <div className="w-full aspect-square bg-white rounded-xl overflow-hidden p-2 flex items-center justify-center mb-2">
                   <img src={img.url} alt={img.alt} className="max-h-full max-w-full object-contain" />
@@ -609,9 +605,8 @@ export default function AdminProductFormPage() {
                   <button
                     type="button"
                     onClick={() => handleSetPrimaryImage(i)}
-                    className={`text-[10px] font-bold flex items-center gap-1 ${
-                      img.isPrimary ? 'text-brand-600' : 'text-slate-400 hover:text-slate-700'
-                    }`}
+                    className={`text-[10px] font-bold flex items-center gap-1 ${img.isPrimary ? 'text-brand-600' : 'text-slate-400 hover:text-slate-700'
+                      }`}
                   >
                     <Star className="w-3 h-3" />
                     <span>{img.isPrimary ? 'Primary' : 'Make Primary'}</span>
