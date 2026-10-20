@@ -1,8 +1,6 @@
 # AquaCare - Water Purifier Product Showcase & Service Management Platform
 
-AquaCare is a modern, full-stack web application designed for a premier residential and commercial water purification enterprise.
-> This platform is an **informational showcase and technical service portal**. 
-> It is engineered specifically around customer education, product specification transparency, interactive visual inspection (including an interactive **360-degree rotational product viewer**), customer enquiry workflows, and service booking dispatch.
+AquaCare is a modern, full-stack web application designed for a premier residential and commercial water purification enterprise. This platform is an **informational showcase and technical service portal**. It is engineered specifically around customer education, product specification transparency, interactive visual inspection (including an interactive **360-degree rotational product viewer**), customer enquiry workflows, and service booking dispatch.
 
 ---
 
