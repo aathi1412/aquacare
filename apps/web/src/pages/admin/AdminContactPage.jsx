@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import api from '../../services/api.js';
 import { useToastStore } from '../../stores/toastStore.js';
 import LoadingState from '../../components/common/LoadingState.jsx';
 import Modal from '../../components/common/Modal.jsx';
 import FormField from '../../components/common/FormField.jsx';
-import { Mail, Phone, Trash2, Eye, MessageSquare } from 'lucide-react';
+import { Trash2, Eye } from 'lucide-react';
 import Button from '@mui/material/Button';
 
 const messageStatuses = ['New', 'Read', 'Replied', 'Archived'];
@@ -114,13 +114,12 @@ export default function AdminContactPage() {
                   </td>
                   <td className="py-3.5 px-4">
                     <span
-                      className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold ${
-                        msg.status === 'New'
-                          ? 'bg-amber-100 text-amber-800'
-                          : msg.status === 'Replied'
+                      className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold ${msg.status === 'New'
+                        ? 'bg-amber-100 text-amber-800'
+                        : msg.status === 'Replied'
                           ? 'bg-emerald-100 text-emerald-800'
                           : 'bg-slate-100 text-slate-800'
-                      }`}
+                        }`}
                     >
                       {msg.status}
                     </span>

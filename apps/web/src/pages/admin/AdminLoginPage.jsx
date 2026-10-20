@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { useAuthStore } from '../../stores/authStore.js';
 import { useToastStore } from '../../stores/toastStore.js';
-import { Droplets, Lock, Mail, ArrowRight, ShieldCheck, KeyRound } from 'lucide-react';
+import { Droplets, Lock, Mail } from 'lucide-react';
 import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
 

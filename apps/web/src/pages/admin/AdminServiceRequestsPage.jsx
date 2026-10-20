@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import api from '../../services/api.js';
 import { useToastStore } from '../../stores/toastStore.js';
 import LoadingState from '../../components/common/LoadingState.jsx';
 import Modal from '../../components/common/Modal.jsx';
 import FormField from '../../components/common/FormField.jsx';
-import { Search, Eye, Trash2, Calendar, MapPin, Phone, Mail, Wrench } from 'lucide-react';
+import { Search, Eye, Trash2, Phone } from 'lucide-react';
 import Button from '@mui/material/Button';
 
 const requestStatuses = ['New', 'Contacted', 'Scheduled', 'In Progress', 'Completed', 'Cancelled'];
@@ -172,15 +172,14 @@ export default function AdminServiceRequestsPage() {
 
                     <td className="py-3.5 px-4">
                       <span
-                        className={`px-2.5 py-0.5 rounded-full text-[11px] font-bold ${
-                          req.status === 'New'
-                            ? 'bg-amber-100 text-amber-800'
-                            : req.status === 'Scheduled'
+                        className={`px-2.5 py-0.5 rounded-full text-[11px] font-bold ${req.status === 'New'
+                          ? 'bg-amber-100 text-amber-800'
+                          : req.status === 'Scheduled'
                             ? 'bg-blue-100 text-blue-800'
                             : req.status === 'Completed'
-                            ? 'bg-emerald-100 text-emerald-800'
-                            : 'bg-slate-100 text-slate-800'
-                        }`}
+                              ? 'bg-emerald-100 text-emerald-800'
+                              : 'bg-slate-100 text-slate-800'
+                          }`}
                       >
                         {req.status}
                       </span>

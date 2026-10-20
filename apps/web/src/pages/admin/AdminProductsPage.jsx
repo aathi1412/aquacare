@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import api from '../../services/api.js';
 import { useToastStore } from '../../stores/toastStore.js';
@@ -180,11 +180,10 @@ export default function AdminProductsPage() {
                     <td className="py-3.5 px-4">
                       <button
                         onClick={() => handleTogglePublish(prod)}
-                        className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold transition ${
-                          prod.isPublished
+                        className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold transition ${prod.isPublished
                             ? 'bg-emerald-50 text-emerald-700 hover:bg-emerald-100'
                             : 'bg-slate-100 text-slate-500 hover:bg-slate-200'
-                        }`}
+                          }`}
                         title="Click to toggle publishing"
                       >
                         {prod.isPublished ? (

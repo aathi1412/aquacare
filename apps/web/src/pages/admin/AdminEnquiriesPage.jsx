@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import api from '../../services/api.js';
 import { useToastStore } from '../../stores/toastStore.js';
 import LoadingState from '../../components/common/LoadingState.jsx';
 import Modal from '../../components/common/Modal.jsx';
 import FormField from '../../components/common/FormField.jsx';
-import { Search, Filter, Trash2, Eye, Edit3, Phone, Mail, Clock } from 'lucide-react';
+import { Search, Trash2, Eye, Phone, Mail } from 'lucide-react';
 import Button from '@mui/material/Button';
 
 const statuses = ['New', 'Contacted', 'In Progress', 'Resolved', 'Closed'];
@@ -168,15 +168,14 @@ export default function AdminEnquiriesPage() {
                     </td>
                     <td className="py-3.5 px-4">
                       <span
-                        className={`px-2.5 py-0.5 rounded-full text-[11px] font-bold ${
-                          enq.status === 'New'
-                            ? 'bg-amber-100 text-amber-800'
-                            : enq.status === 'Resolved'
+                        className={`px-2.5 py-0.5 rounded-full text-[11px] font-bold ${enq.status === 'New'
+                          ? 'bg-amber-100 text-amber-800'
+                          : enq.status === 'Resolved'
                             ? 'bg-emerald-100 text-emerald-800'
                             : enq.status === 'Contacted'
-                            ? 'bg-blue-100 text-blue-800'
-                            : 'bg-slate-100 text-slate-800'
-                        }`}
+                              ? 'bg-blue-100 text-blue-800'
+                              : 'bg-slate-100 text-slate-800'
+                          }`}
                       >
                         {enq.status}
                       </span>

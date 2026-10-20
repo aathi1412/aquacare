@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import api from '../../services/api.js';
 import { useToastStore } from '../../stores/toastStore.js';
 import { useSettingsStore } from '../../stores/settingsStore.js';
 import LoadingState from '../../components/common/LoadingState.jsx';
 import FormField from '../../components/common/FormField.jsx';
-import { Save, Settings, Phone, Mail, MapPin, Globe, Sparkles } from 'lucide-react';
+import { Save } from 'lucide-react';
 import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
 

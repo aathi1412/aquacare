@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import api from '../../services/api.js';
 import { useToastStore } from '../../stores/toastStore.js';
 import LoadingState from '../../components/common/LoadingState.jsx';
 import Modal from '../../components/common/Modal.jsx';
 import FormField from '../../components/common/FormField.jsx';
-import { Plus, Edit, Trash2, HelpCircle } from 'lucide-react';
+import { Plus, Edit, Trash2 } from 'lucide-react';
 import Button from '@mui/material/Button';
 
 export default function AdminFAQsPage() {
@@ -150,9 +150,8 @@ export default function AdminFAQsPage() {
                   <td className="py-3.5 px-4">{faq.displayOrder || 0}</td>
                   <td className="py-3.5 px-4">
                     <span
-                      className={`px-2.5 py-0.5 rounded-full text-[11px] font-bold ${
-                        faq.isPublished ? 'bg-emerald-50 text-emerald-700' : 'bg-slate-100 text-slate-500'
-                      }`}
+                      className={`px-2.5 py-0.5 rounded-full text-[11px] font-bold ${faq.isPublished ? 'bg-emerald-50 text-emerald-700' : 'bg-slate-100 text-slate-500'
+                        }`}
                     >
                       {faq.isPublished ? 'Published' : 'Hidden'}
                     </span>

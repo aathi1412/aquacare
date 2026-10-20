@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import api from '../../services/api.js';
 import LoadingState from '../../components/common/LoadingState.jsx';
@@ -11,10 +11,7 @@ import {
   MessageSquare,
   ArrowRight,
   Database,
-  ExternalLink,
   PlusCircle,
-  Clock,
-  UserCheck,
 } from 'lucide-react';
 import Button from '@mui/material/Button';
 
@@ -222,13 +219,12 @@ export default function AdminDashboardPage() {
                       </td>
                       <td className="py-3 px-4">
                         <span
-                          className={`px-2 py-0.5 rounded-full text-[10px] font-bold ${
-                            enq.status === 'New'
-                              ? 'bg-amber-100 text-amber-800'
-                              : enq.status === 'Resolved'
+                          className={`px-2 py-0.5 rounded-full text-[10px] font-bold ${enq.status === 'New'
+                            ? 'bg-amber-100 text-amber-800'
+                            : enq.status === 'Resolved'
                               ? 'bg-emerald-100 text-emerald-800'
                               : 'bg-brand-100 text-brand-800'
-                          }`}
+                            }`}
                         >
                           {enq.status}
                         </span>
@@ -282,15 +278,14 @@ export default function AdminDashboardPage() {
                       </td>
                       <td className="py-3 px-4">
                         <span
-                          className={`px-2 py-0.5 rounded-full text-[10px] font-bold ${
-                            req.status === 'New'
-                              ? 'bg-amber-100 text-amber-800'
-                              : req.status === 'Scheduled'
+                          className={`px-2 py-0.5 rounded-full text-[10px] font-bold ${req.status === 'New'
+                            ? 'bg-amber-100 text-amber-800'
+                            : req.status === 'Scheduled'
                               ? 'bg-blue-100 text-blue-800'
                               : req.status === 'Completed'
-                              ? 'bg-emerald-100 text-emerald-800'
-                              : 'bg-slate-100 text-slate-800'
-                          }`}
+                                ? 'bg-emerald-100 text-emerald-800'
+                                : 'bg-slate-100 text-slate-800'
+                            }`}
                         >
                           {req.status}
                         </span>
